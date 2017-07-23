@@ -33,7 +33,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     if(err){
       console.log("There is an error", err);
     }
-    //Object id are made up of a lot of things, one being the timestamp. We can extract the timestamp from the object id in the following manner
+    //Object id are made up of a lot of things, one being the timestamp. We can extract the timestamp from the object id in the following manner.
     console.log(result.ops[0]._id.getTimestamp());
   })
   db.close();
