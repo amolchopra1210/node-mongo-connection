@@ -17,6 +17,14 @@ app.post('/todos', (req,res)=>{
       res.status(400).send(err);
     });
 });
+
+app.get('/todos', (req, res) => {
+  Todo.find().then((data) => {
+    res.send(data);
+  }, (err) => {
+    res.status(400).send("There is an error", err);
+  })
+})
 app.listen(3000, ()=>{
   console.log("Server is running now")
 });
